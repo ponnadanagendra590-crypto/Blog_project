@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Blog Posts</h2>
+{% for p in posts %}
+  <h3><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h3>
+  <p>{{ p.body|truncatewords:20 }}</p>
+  <hr>
+{% endfor %}
+{% endblock %}
